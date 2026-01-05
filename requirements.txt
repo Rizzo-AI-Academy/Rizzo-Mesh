@@ -1,0 +1,5 @@
+numpy
+trimesh[easy]
+Pillow
+httpx
+pyglet<2
