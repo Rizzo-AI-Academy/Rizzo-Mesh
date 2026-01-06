@@ -3,6 +3,10 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+dataset_objs
+dataset_objs_full
+quantized_objs
+
 # C extensions
 *.so
 

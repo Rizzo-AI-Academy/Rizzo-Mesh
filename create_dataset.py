@@ -2,8 +2,10 @@ from low_poly import *
 from quantize import *
 from utils import *
 from pathlib import Path
+from ai_captiononer import *
 
-DATASET_FOLDER = "dataset_objs"
+
+DATASET_FOLDER = "dataset_objs_full"
 OUT_PUT_FOLDER = "quantized_objs"
 CAPTIONS_FOLDER = "captions"
 
@@ -37,9 +39,17 @@ def create_captions(dataset_folder: str, output_folder: str):
         quant_name = rel_path.with_name(rel_path.stem + '_image.jpg')
         out_file   = out_root / quant_name
         render_to_image(mesh, out_file)
+        caption = ai_captioning(out_file)
+        rel_path = obj_file.relative_to(dataset_path)
+        caption_name = rel_path.with_name(rel_path.stem + '_caption.txt')
+        with open(f"{output_folder}/{caption_name}", "w", encoding="utf-8") as f:
+            f.write(caption)
+        
         # caption = create_caption(imgs)
         # save caption as file .txt
 
 def crea_dataset():
     create_quantized_dataset(dataset_folder=DATASET_FOLDER, output_folder=OUT_PUT_FOLDER)
-    create_captions(dataset_folder=DATASET_FOLDER, )
+    create_captions(dataset_folder=DATASET_FOLDER, output_folder=OUT_PUT_FOLDER)
+
+crea_dataset()
