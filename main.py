@@ -3,7 +3,7 @@ from quantize import *
 from utils import *
 
 # --- CONFIGURAZIONE ---
-FILE_PATH = "quantized_objs//005375787cbf42a38afcf8810cef9731_quantized.obj"
+FILE_PATH = "modello_convertito.obj"
 OUTPUT_IMG = "render_contrast.jpg"
 
 # METODO 1: Quadric Decimation (raccomandato)
