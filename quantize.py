@@ -173,9 +173,9 @@ def visualize_quantized_obj_int255(path: str, show: bool = True):
 
     mesh = trimesh.Trimesh(vertices=v, faces=faces, process=False)
 
-    print(f"Loaded quantized OBJ: {path}")
-    print(f"normalize_mode (comment): {normalize_mode}")
-    print(f"verts: {len(mesh.vertices)}, faces: {len(mesh.faces)}")
+    # print(f"Loaded quantized OBJ: {path}")
+    # print(f"normalize_mode (comment): {normalize_mode}")
+    # print(f"verts: {len(mesh.vertices)}, faces: {len(mesh.faces)}")
 
     if show:
         mesh.show()

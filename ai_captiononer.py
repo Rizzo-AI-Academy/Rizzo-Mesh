@@ -10,7 +10,7 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 client = OpenAIClient(
     api_key=OPENAI_API_KEY,
-    model="gpt-5-mini"  # Vision models required for images
+    model="gpt-5-nano"  # Vision models required for images
 ) 
 system_prompt="""
 Dato il rendering di questo oggetto 3D voglio che mi fornisci una caption breve che lo descriva.

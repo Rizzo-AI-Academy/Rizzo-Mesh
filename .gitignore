@@ -6,6 +6,10 @@ __pycache__/
 dataset_objs
 dataset_objs_full
 quantized_objs
+img_rendered
+model.txt
+modello_convertito.obj
+temp_script.py
 
 # C extensions
 *.so
