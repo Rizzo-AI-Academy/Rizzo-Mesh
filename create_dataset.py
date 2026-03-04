@@ -209,11 +209,11 @@ def final_dataset_for_llm():
         response1 = f"\nEcco il tuo oggetto 3D:\n{obj_content}"
         question2 = f"{context_sentence}\n{obj_content}"
         response2 = f"\nRappresenta: {caption_content}"
-        dataset.append([{"role":"user", "content": question1,}, {"role": "assistant","content": response1}])
-        dataset.append([{"role":"user", "content": question2,}, {"role": "assistant","content": response2}])
+        dataset.append({"messages":[{"role":"user", "content": question1,}, {"role": "assistant","content": response1}]})
+        dataset.append({"messages":[{"role":"user", "content": question2,}, {"role": "assistant","content": response2}]})
     # save the database into a json file locally
     
-    with open("database.json", "w", encoding="utf-8") as f:
+    with open("dataset_sample.json", "w", encoding="utf-8") as f:
         json.dump(dataset, f, indent=4, ensure_ascii=False)
         
 
